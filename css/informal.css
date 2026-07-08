@@ -1,0 +1,451 @@
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:"Segoe UI", Arial, sans-serif;
+
+}
+
+
+body{
+
+    background:#F7F8FA;
+
+    color:#2C2C2C;
+
+}
+
+
+
+/* MAIN LAYOUT */
+
+.editor{
+
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template-columns:350px 1fr;
+
+}
+
+
+
+
+
+
+/* LEFT PANEL */
+
+.input-area{
+
+    background:#0D1B2A;
+
+    color:white;
+
+    padding:40px;
+
+}
+
+
+.input-area h2{
+
+    margin-bottom:35px;
+
+}
+
+
+.input-area label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:14px;
+
+}
+
+
+
+.input-area input{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    border:none;
+
+    outline:none;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.input-area button{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:15px;
+
+
+    border:none;
+
+    border-radius:30px;
+
+
+    background:#7B0D1E;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.input-area button:hover{
+
+    opacity:.85;
+
+}
+
+
+
+
+
+
+
+/* BACK BUTTON */
+
+.back-btn{
+
+    background:transparent !important;
+
+    border:1px solid rgba(255,255,255,.4) !important;
+
+
+    margin-bottom:35px;
+
+}
+
+
+.back-btn:hover{
+
+    background:white !important;
+
+    color:#0D1B2A;
+
+}
+
+
+
+
+
+
+
+
+
+/* PREVIEW AREA */
+
+
+.preview{
+
+    padding:50px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+}
+
+
+
+
+
+
+/* PAPER */
+
+.paper{
+
+    width:794px;
+
+    min-height:1123px;
+
+
+    background:white;
+
+
+    padding:60px 70px;
+
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.15);
+
+
+}
+
+
+
+
+
+
+
+
+/* HEADER */
+
+
+.letter-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+}
+
+
+
+.letter-logo{
+
+    width:110px;
+
+}
+
+
+
+.company h3{
+
+    color:#0D1B2A;
+
+    font-size:22px;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.company p{
+
+    font-size:14px;
+
+    line-height:1.5;
+
+    color:#555;
+
+}
+
+
+
+
+
+
+
+hr{
+
+    margin:35px 0 60px;
+
+    border:none;
+
+    height:2px;
+
+    background:#7B0D1E;
+
+}
+
+
+
+
+
+
+
+
+/* EDITABLE TITLE */
+
+#previewTitle{
+
+
+    text-align:center;
+
+
+    font-size:32px;
+
+
+    color:#0D1B2A;
+
+
+    margin-bottom:45px;
+
+
+    outline:none;
+
+
+    cursor:text;
+
+
+}
+
+
+
+
+
+
+
+/* EDITABLE CONTENT */
+
+
+#previewContent{
+
+
+    min-height:500px;
+
+
+    font-size:16px;
+
+
+    line-height:1.8;
+
+
+    outline:none;
+
+
+    cursor:text;
+
+
+}
+
+
+
+#previewTitle:focus,
+#previewContent:focus,
+#previewPrepared:focus{
+
+
+    background:#F7F8FA;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* SIGNATURE */
+
+
+.sign{
+
+    margin-top:70px;
+
+
+    line-height:1.8;
+
+}
+
+
+
+#previewPrepared{
+
+    outline:none;
+
+    cursor:text;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+
+
+
+
+/* PRINT PDF */
+
+@media print{
+
+
+    body *{
+
+        visibility:hidden;
+
+    }
+
+
+    .paper,
+    .paper *{
+
+        visibility:visible;
+
+    }
+
+
+    .paper{
+
+        position:absolute;
+
+        left:0;
+
+        top:0;
+
+
+        width:210mm;
+
+        min-height:297mm;
+
+
+        box-shadow:none;
+
+    }
+
+
+    @page{
+
+        size:A4;
+
+        margin:0;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* RESPONSIVE */
+
+
+@media(max-width:900px){
+
+
+.editor{
+
+    grid-template-columns:1fr;
+
+}
+
+
