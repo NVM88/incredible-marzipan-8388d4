@@ -1,0 +1,315 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", Arial, sans-serif;
+}
+
+
+body{
+    background:#eef2f5;
+}
+
+
+
+/* MAIN */
+
+.editor{
+    display:flex;
+    min-height:100vh;
+}
+
+
+
+/* LEFT SIDE */
+
+.input-area{
+
+    width:35%;
+    background:#ffffff;
+    padding:35px;
+
+    box-shadow:
+    5px 0 20px rgba(0,0,0,0.08);
+
+}
+
+
+.input-area h2{
+
+    margin-bottom:30px;
+
+    color:#25344d;
+
+    font-size:28px;
+
+}
+
+
+
+label{
+
+    display:block;
+
+    margin-top:18px;
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#555;
+
+}
+
+
+
+input,
+textarea{
+
+    width:100%;
+
+    padding:13px;
+
+    border-radius:10px;
+
+    border:1px solid #d7dce2;
+
+    font-size:15px;
+
+}
+
+
+
+textarea{
+
+    height:180px;
+
+    resize:none;
+
+}
+
+
+
+/* BUTTON */
+
+
+button{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:20px;
+
+    border:none;
+
+    border-radius:25px;
+
+    background:#25344d;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+
+
+button:hover{
+
+    background:#9b6b43;
+
+}
+
+
+
+.back-btn{
+
+    background:#ddd;
+
+    color:#333;
+
+    margin-bottom:25px;
+
+}
+
+
+.back-btn:hover{
+
+    background:#ccc;
+
+}
+
+
+
+
+
+
+/* RIGHT AREA */
+
+.preview{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:50px;
+
+}
+
+
+
+
+/* PAPER DESIGN */
+
+
+.paper{
+
+    width:750px;
+
+    min-height:850px;
+
+    background:white;
+
+    padding:60px;
+
+    border-radius:12px;
+
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.15);
+
+}
+
+
+
+
+
+/* HEADER */
+
+
+.letter-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+
+
+.letter-logo{
+
+    width:200px;
+
+}
+
+
+
+.company h3{
+
+    color:#25344d;
+
+    letter-spacing:1px;
+
+}
+
+
+
+.company p{
+
+    margin-top:8px;
+
+    line-height:1.5;
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+
+
+
+hr{
+
+    border:none;
+
+    height:1px;
+
+    background:#ddd;
+
+    margin:35px 0;
+
+}
+
+
+
+
+
+
+/* INFORMAL CONTENT */
+
+
+#previewTitle{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+    font-size:26px;
+
+}
+
+
+
+#previewContent{
+
+    min-height:400px;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+
+
+
+.sign{
+
+    margin-top:50px;
+
+    font-size:16px;
+
+}
+
+
+
+#previewPrepared{
+
+    font-weight:bold;
+
+}
+
+
+
+
+/* EDIT MODE */
+
+[contenteditable="true"]:focus{
+
+    outline:2px solid #9b6b43;
+
+    padding:5px;
+
+}
