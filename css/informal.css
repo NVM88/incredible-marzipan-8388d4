@@ -1,11 +1,8 @@
 *{
 
     margin:0;
-
     padding:0;
-
     box-sizing:border-box;
-
     font-family:"Segoe UI", Arial, sans-serif;
 
 }
@@ -13,15 +10,12 @@
 
 body{
 
-    background:#F7F8FA;
-
-    color:#2C2C2C;
+    background:#eef1f5;
 
 }
 
 
-
-/* MAIN LAYOUT */
+/* layout */
 
 .editor{
 
@@ -34,15 +28,11 @@ body{
 }
 
 
-
-
-
-
-/* LEFT PANEL */
+/* sidebar */
 
 .input-area{
 
-    background:#0D1B2A;
+    background:#7B0D1E;
 
     color:white;
 
@@ -64,10 +54,7 @@ body{
 
     margin-bottom:10px;
 
-    font-size:14px;
-
 }
-
 
 
 .input-area input{
@@ -76,16 +63,13 @@ body{
 
     padding:14px;
 
-    border-radius:10px;
-
     border:none;
 
-    outline:none;
+    border-radius:15px;
 
     margin-bottom:20px;
 
 }
-
 
 
 .input-area button{
@@ -96,45 +80,29 @@ body{
 
     margin-top:15px;
 
-
     border:none;
 
     border-radius:30px;
 
+    background:white;
 
-    background:#7B0D1E;
-
-    color:white;
+    color:#7B0D1E;
 
     cursor:pointer;
 
-    transition:.3s;
-
 }
 
-
-.input-area button:hover{
-
-    opacity:.85;
-
-}
-
-
-
-
-
-
-
-/* BACK BUTTON */
+/* back button */
 
 .back-btn{
 
+    margin-bottom:70px !important;
+
     background:transparent !important;
 
-    border:1px solid rgba(255,255,255,.4) !important;
+    color:white !important;
 
-
-    margin-bottom:35px;
+    border:1px solid rgba(255,255,255,.5) !important;
 
 }
 
@@ -143,40 +111,25 @@ body{
 
     background:white !important;
 
-    color:#0D1B2A;
+    color:#7B0D1E !important;
 
 }
 
 
-
-
-
-
-
-
-
-/* PREVIEW AREA */
-
+/* preview */
 
 .preview{
 
     padding:50px;
 
-
     display:flex;
 
     justify-content:center;
 
-    align-items:flex-start;
-
 }
 
 
-
-
-
-
-/* PAPER */
+/* paper */
 
 .paper{
 
@@ -187,265 +140,204 @@ body{
 
     background:white;
 
-
-    padding:60px 70px;
+    padding:70px;
 
 
     box-shadow:
-    0 20px 60px rgba(0,0,0,.15);
+    0 25px 70px rgba(0,0,0,.12);
 
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* decoration */
+
+.paper::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120px;
+
+    right:-120px;
+
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+
+    background:rgba(123,13,30,.12);
 
 }
 
 
 
+.paper::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-100px;
+
+    left:-100px;
 
 
+    width:250px;
+
+    height:250px;
+
+    border-radius:50%;
 
 
+    background:rgba(13,27,42,.1);
 
-/* HEADER */
+}
+
+
+/* header */
 
 
 .letter-header{
 
-    display:flex;
-
-    align-items:center;
-
-    gap:30px;
+    text-align:center;
 
 }
-
 
 
 .letter-logo{
 
-    width:110px;
+    width:200px;
+
+    margin-bottom:20px;
 
 }
-
 
 
 .company h3{
 
+    font-size:24px;
+
     color:#0D1B2A;
 
-    font-size:22px;
-
-    margin-bottom:8px;
-
 }
-
 
 
 .company p{
 
-    font-size:14px;
+    margin-top:15px;
+
+    color:#666;
 
     line-height:1.5;
 
-    color:#555;
-
 }
-
-
-
-
 
 
 
 hr{
 
-    margin:35px 0 60px;
+    width:80px;
 
-    border:none;
-
-    height:2px;
+    height:4px;
 
     background:#7B0D1E;
 
+    border:none;
+
+
+    margin:
+
+    50px auto;
+
 }
 
 
 
-
-
-
-
-
-/* EDITABLE TITLE */
+/* title */
 
 #previewTitle{
 
-
     text-align:center;
 
+    font-size:36px;
 
-    font-size:32px;
-
-
-    color:#0D1B2A;
-
-
-    margin-bottom:45px;
-
+    margin-bottom:50px;
 
     outline:none;
-
-
-    cursor:text;
-
 
 }
 
 
-
-
-
-
-
-/* EDITABLE CONTENT */
-
+/* message card */
 
 #previewContent{
 
 
-    min-height:500px;
+    min-height:400px;
 
 
-    font-size:16px;
-
-
-    line-height:1.8;
-
-
-    outline:none;
-
-
-    cursor:text;
-
-
-}
-
-
-
-#previewTitle:focus,
-#previewContent:focus,
-#previewPrepared:focus{
+    padding:40px;
 
 
     background:#F7F8FA;
 
 
-}
-
-
-
-
-
-
-
-
-
-/* SIGNATURE */
-
-
-.sign{
-
-    margin-top:70px;
+    border-radius:25px;
 
 
     line-height:1.8;
 
+
+    outline:none;
+
 }
 
+
+/* signature */
+
+.sign{
+
+    margin-top:60px;
+
+    text-align:right;
+
+}
 
 
 #previewPrepared{
 
     outline:none;
 
+    font-weight:bold;
+
+}
+
+
+
+/* editable */
+
+#previewTitle,
+#previewContent,
+#previewPrepared{
+
     cursor:text;
 
-    font-weight:600;
-
 }
 
 
+#previewTitle:focus,
+#previewContent:focus,
+#previewPrepared:focus{
 
-
-
-
-
-
-
-/* PRINT PDF */
-
-@media print{
-
-
-    body *{
-
-        visibility:hidden;
-
-    }
-
-
-    .paper,
-    .paper *{
-
-        visibility:visible;
-
-    }
-
-
-    .paper{
-
-        position:absolute;
-
-        left:0;
-
-        top:0;
-
-
-        width:210mm;
-
-        min-height:297mm;
-
-
-        box-shadow:none;
-
-    }
-
-
-    @page{
-
-        size:A4;
-
-        margin:0;
-
-    }
-
+    background:#fafafa;
 
 }
-
-
-
-
-
-
-
-/* RESPONSIVE */
-
-
-@media(max-width:900px){
-
-
-.editor{
-
-    grid-template-columns:1fr;
-
-}
-
-
