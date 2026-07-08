@@ -156,3 +156,17 @@ function backHome(){
 
 
 }
+
+// =======================
+// UPDATE INFORMAL LETTER
+// =======================
+
+
+function generateInformalLetter(){
+
+
+    document.getElementById("previewPrepared").innerHTML =
+    document.getElementById("prepared").value;
+
+
+}
