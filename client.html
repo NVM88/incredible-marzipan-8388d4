@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>General Letter Editor</title>
+
+<link rel="stylesheet" href="css/informal.css">
+
+</head>
+
+
+<body>
+
+
+<section class="editor">
+
+
+<!-- LEFT CONTROL PANEL -->
+
+<div class="input-area">
+
+
+<button 
+class="back-btn"
+onclick="backHome()">
+
+← Back to Templates
+
+</button>
+
+
+<h2>Create General Letter</h2>
+
+<label>
+Prepared By
+</label>
+
+<input
+type="text"
+id="prepared">
+
+<button onclick="generateInformalLetter()">
+
+Update Preview
+
+</button>
+
+
+<button onclick="downloadPDF()">
+
+Download PDF
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+<!-- RIGHT PREVIEW -->
+
+<div class="preview">
+
+
+<div class="paper">
+
+
+
+<!-- COMPANY HEADER -->
+
+
+<div class="letter-header">
+
+
+<img
+src="image/logo.png"
+class="letter-logo">
+
+
+
+<div class="company">
+
+
+<h3>
+NOVA WEALTH MANAGEMENT
+</h3>
+
+
+<p>
+
+7-7, 7th Floor, The Boulevard,<br>
+
+Mid Valley City,<br>
+
+Lingkaran Syed Putra,<br>
+
+59200 Kuala Lumpur.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<hr>
+
+
+
+
+
+
+<!-- INFORMAL CONTENT -->
+
+
+<h2 
+id="previewTitle" 
+contenteditable="true">
+
+Announcement Title
+
+</h2>
+
+
+
+<div 
+id="previewContent" 
+contenteditable="true">
+
+Write your announcement or message here...
+
+</div>
+
+
+
+
+
+
+<div class="sign">
+
+Prepared By:
+
+<br><br>
+
+
+<span 
+id="previewPrepared">
+
+Name
+
+</span>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+<script src="js/html2pdf.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+
+
+</body>
+
+
+</html>

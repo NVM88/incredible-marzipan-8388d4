@@ -13,6 +13,10 @@ function chooseTemplate(type){
 
 
     }
+	
+	else if(type === "client"){
+        window.location.href = "client.html";
+    }
 
 
     else if(type === "informal"){

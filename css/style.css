@@ -1,3 +1,17 @@
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+}
+
 *{
     margin:0;
     padding:0;
@@ -84,7 +98,7 @@ body{
 
 .logo{
 
-    width:120px;
+    width:500px;
 
     margin-bottom:25px;
 
@@ -96,7 +110,7 @@ body{
 
 h1{
 
-    font-size:42px;
+    font-size:30px;
 
     color:#0D1B2A;
 
@@ -126,7 +140,7 @@ h1{
     display:grid;
 
     grid-template-columns:
-    repeat(2,1fr);
+    repeat(3,1fr);
 
     gap:30px;
 
@@ -182,7 +196,7 @@ h1{
 
     color:#7B0D1E;
 
-    margin-bottom:15px;
+    margin-bottom:12px;
 
 }
 
@@ -375,9 +389,8 @@ h1{
 
 
 .letter-logo{
-
-    width:130px;
-
+    height: 55px;
+    width: auto;
 }
 
 
@@ -419,6 +432,52 @@ hr{
 
 }
 
+.letter-header{
+    display:grid;
+    grid-template-columns:240px auto;
+    align-items:center;
+
+    border:1px solid #d8d8d8;
+}
+.header-left{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-right:1px solid #d8d8d8;
+
+    padding:15px;
+
+}
+
+.header-right{
+
+    padding:15px 25px;
+
+    text-align:right;
+
+}
+
+.header-right h2{
+
+    font-size:17px;
+
+    font-weight:700;
+
+    margin-bottom:5px;
+
+}
+
+.header-right p{
+
+    font-size:11px;
+
+    line-height:1.4;
+
+}
 
 
 .letter-info{
