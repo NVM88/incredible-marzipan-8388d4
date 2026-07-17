@@ -174,3 +174,23 @@ function generateInformalLetter(){
 
 
 }
+
+function generateClientLetter(){
+
+    const date = document.getElementById("letterDate").value;
+    const client = document.getElementById("clientName").value;
+    const subject = document.getElementById("subject").value;
+    const prepared = document.getElementById("prepared").value;
+
+    document.getElementById("previewDate").innerText =
+        date || new Date().toLocaleDateString("en-GB");
+
+    document.getElementById("previewClient").innerText =
+        client ? `Dear ${client},` : "Dear Client,";
+
+    document.getElementById("previewTitle").innerText =
+        subject || "Subject";
+
+    document.getElementById("previewPrepared").innerText =
+        prepared || "Advisor Name";
+}

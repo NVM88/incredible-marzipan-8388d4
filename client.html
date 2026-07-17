@@ -8,184 +8,186 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>General Letter Editor</title>
+<title>Client Letter Editor</title>
 
-<link rel="stylesheet" href="css/informal.css">
+<link rel="stylesheet" href="css/client.css">
 
 </head>
 
-
 <body>
-
 
 <section class="editor">
 
+    <!-- LEFT CONTROL PANEL -->
 
-<!-- LEFT CONTROL PANEL -->
+    <div class="input-area">
 
-<div class="input-area">
+        <button
+        class="back-btn"
+        onclick="backHome()">
 
+        ← Back to Templates
 
-<button 
-class="back-btn"
-onclick="backHome()">
+        </button>
 
-← Back to Templates
+        <h2>Create Client Letter</h2>
 
-</button>
+        <label>
+        Date
+        </label>
 
+        <input
+        type="date"
+        id="letterDate">
 
-<h2>Create General Letter</h2>
+        <label>
+        Client Name
+        </label>
 
-<label>
-Prepared By
-</label>
+        <input
+        type="text"
+        id="clientName"
+        placeholder="e.g. Mr. John Tan">
 
-<input
-type="text"
-id="prepared">
+        <label>
+        Subject
+        </label>
 
-<button onclick="generateInformalLetter()">
+        <input
+        type="text"
+        id="subject"
+        placeholder="Financial Planning Consultation">
 
-Update Preview
+        <label>
+        Advisor Name
+        </label>
 
-</button>
+        <input
+        type="text"
+        id="prepared">
 
+        <button onclick="generateClientLetter()">
 
-<button onclick="downloadPDF()">
+        Update Preview
 
-Download PDF
+        </button>
 
-</button>
+        <button onclick="downloadPDF()">
 
+        Download PDF
 
-</div>
+        </button>
 
+    </div>
 
+    <!-- RIGHT PREVIEW -->
 
+    <div class="preview">
 
+        <div class="paper">
 
+            <!-- COMPANY HEADER -->
 
-<!-- RIGHT PREVIEW -->
+            <div class="letter-header">
 
-<div class="preview">
+                <img
+                src="image/logo.png"
+                class="letter-logo">
 
+                <div class="company">
 
-<div class="paper">
+                    <p>
 
+                    7-7, 7th Floor, The Boulevard,<br>
 
+                    Mid Valley City,<br>
 
-<!-- COMPANY HEADER -->
+                    Lingkaran Syed Putra,<br>
 
+                    59200 Kuala Lumpur.
 
-<div class="letter-header">
+                    </p>
 
+                </div>
 
-<img
-src="image/logo.png"
-class="letter-logo">
+            </div>
 
+            <hr>
 
+            <div id="previewDate">
+                17 July 2026
+            </div>
 
-<div class="company">
+            <br>
 
+            <div id="previewClient">
+                Dear Client,
+            </div>
 
-<h3>
-NOVA WEALTH MANAGEMENT
-</h3>
+            <br>
 
+            <h2
+            id="previewTitle"
+            contenteditable="true">
 
-<p>
+            Subject
 
-7-7, 7th Floor, The Boulevard,<br>
+            </h2>
 
-Mid Valley City,<br>
+            <div
+            id="previewContent"
+            contenteditable="true">
 
-Lingkaran Syed Putra,<br>
+            Thank you for taking the time to meet with us.
 
-59200 Kuala Lumpur.
+            <br><br>
 
-</p>
+            We appreciate the opportunity to assist you with your financial planning needs. Our team is committed to providing professional advice and suitable financial solutions based on your goals.
 
+            <br><br>
 
-</div>
+            Should you require any further information, please do not hesitate to contact us.
 
+            <br><br>
 
-</div>
+            Thank you.
 
+            </div>
 
+            <br><br>
 
-<hr>
+            <div class="sign">
 
+                Yours sincerely,
 
+                <br><br><br>
 
+                <span id="previewPrepared">
 
+                Advisor Name
 
+                </span>
 
-<!-- INFORMAL CONTENT -->
+                <br>
 
+                Financial Advisor
 
-<h2 
-id="previewTitle" 
-contenteditable="true">
+                <br>
 
-Announcement Title
+                Nova Wealth Management
 
-</h2>
+            </div>
 
+        </div>
 
-
-<div 
-id="previewContent" 
-contenteditable="true">
-
-Write your announcement or message here...
-
-</div>
-
-
-
-
-
-
-<div class="sign">
-
-Prepared By:
-
-<br><br>
-
-
-<span 
-id="previewPrepared">
-
-Name
-
-</span>
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-</div>
-
-
+    </div>
 
 </section>
-
-
 
 <script src="js/html2pdf.bundle.min.js"></script>
 
 <script src="js/script.js"></script>
 
-
 </body>
-
 
 </html>

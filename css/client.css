@@ -1,0 +1,300 @@
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter", Arial, sans-serif;
+}
+
+
+body{
+    background:#f3f5f7;
+}
+
+.editor{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ===========================
+   LEFT PANEL
+=========================== */
+
+.input-area{
+    width:340px;
+    background:#ffffff;
+    padding:30px;
+    border-right:1px solid #ddd;
+    overflow-y:auto;
+}
+
+.input-area h2{
+    margin-bottom:25px;
+    color:#0D1B2A;
+}
+
+.input-area label{
+    display:block;
+    margin-top:18px;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#333;
+}
+
+.input-area input{
+    width:100%;
+    padding:12px 15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+    font-size:14px;
+}
+
+.input-area input:focus{
+    border-color:#0D1B2A;
+}
+
+.input-area button{
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.input-area button:nth-of-type(2){
+    background:#0D1B2A;
+    color:#fff;
+}
+
+.input-area button:nth-of-type(2):hover{
+    background:#132b45;
+}
+
+.input-area button:nth-of-type(3){
+    background:#7B0D1E;
+    color:#fff;
+}
+
+.input-area button:nth-of-type(3):hover{
+    background:#5e0a17;
+}
+
+.back-btn{
+    background:#ececec !important;
+    color:#333 !important;
+    margin-bottom:25px;
+}
+
+/* ===========================
+   PREVIEW
+=========================== */
+
+.preview{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:40px;
+    overflow:auto;
+}
+
+.paper{
+    width:210mm;
+    min-height:297mm;
+    background:#fff;
+    padding:18mm 20mm;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.letter-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+    margin-bottom:18px;
+}
+
+.letter-logo{
+    width:400px;
+}
+
+.company{
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    text-align:right;
+}
+
+.company p{
+    font-size:10px;
+    line-height:1.6;
+    color:#666;
+    text-align:right;
+}
+
+hr{
+    margin:18px 0 22px;
+    border:none;
+    border-top:1.5px solid #0D1B2A;
+}
+
+/* ===========================
+   LETTER
+=========================== */
+
+#previewDate{
+    text-align:right;
+    margin-right:8px;
+    margin-bottom:28px;
+    font-size:13px;
+    color:#666;
+}
+
+#previewClient{
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:22px;
+}
+
+#previewTitle{
+    color:#0D1B2A;
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:22px;
+    outline:none;
+}
+
+#previewContent{
+    font-size:13px;
+    line-height:1.9;
+    color:#444;
+    min-height:320px;
+    outline:none;
+}
+
+.sign{
+    margin-top:70px;
+    line-height:1.8;
+    font-size:13px;
+    color:#444;
+}
+
+#previewPrepared{
+    font-size:14px;
+    font-weight:600;
+    color:#0D1B2A;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1000px){
+
+.editor{
+    flex-direction:column;
+}
+
+.input-area{
+    width:100%;
+    border-right:none;
+    border-bottom:1px solid #ddd;
+}
+
+.preview{
+    padding:20px;
+}
+
+.paper{
+    width:100%;
+    min-height:auto;
+    padding:35px;
+}
+
+.letter-header{
+    flex-direction:column;
+    gap:20px;
+}
+
+.company{
+    text-align:center;
+}
+
+}
+
+/* ===========================
+   PRINT ONLY PAPER
+=========================== */
+
+@media print{
+
+    body *{
+        visibility:hidden;
+    }
+
+    .paper,
+    .paper *{
+        visibility:visible;
+    }
+
+    .paper{
+
+        position:absolute;
+
+        left:0;
+        top:0;
+
+        width:210mm;
+        min-height:297mm;
+
+        margin:0;
+        padding:18mm 20mm;
+
+        box-shadow:none;
+
+    }
+
+    .preview{
+
+        padding:0;
+        margin:0;
+
+    }
+
+    @page{
+
+        size:A4 portrait;
+        margin:0;
+
+    }
+	
+	.letter-header{
+        display:flex !important;
+        flex-direction:row !important;
+        justify-content:space-between !important;
+        align-items:center !important;
+    }
+
+}
