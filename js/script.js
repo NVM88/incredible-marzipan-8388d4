@@ -182,8 +182,21 @@ function generateClientLetter(){
     const subject = document.getElementById("subject").value;
     const prepared = document.getElementById("prepared").value;
 
-    document.getElementById("previewDate").innerText =
-        date || new Date().toLocaleDateString("en-GB");
+    if(date){
+
+    const selectedDate = new Date(date);
+
+    document.getElementById("previewDate").innerHTML =
+        selectedDate.toLocaleDateString(
+            "en-MY",
+            {
+                day:"numeric",
+                month:"long",
+                year:"numeric"
+            }
+        );
+
+}
 
     document.getElementById("previewClient").innerText =
         client ? `Dear ${client},` : "Dear Client,";
@@ -194,3 +207,34 @@ function generateClientLetter(){
     document.getElementById("previewPrepared").innerText =
         prepared || "Advisor Name";
 }
+
+
+// =======================
+// AUTO CLIENT DATE
+// =======================
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const dateInput = document.getElementById("letterDate");
+    const previewDate = document.getElementById("previewDate");
+
+    if(dateInput && previewDate){
+
+        const today = new Date();
+
+        // 给 input[type="date"] 用 (YYYY-MM-DD)
+        dateInput.value = today.toISOString().split("T")[0];
+
+        // Preview 显示 (17 July 2026)
+        previewDate.innerHTML = today.toLocaleDateString(
+            "en-MY",
+            {
+                day:"numeric",
+                month:"long",
+                year:"numeric"
+            }
+        );
+
+    }
+
+});
