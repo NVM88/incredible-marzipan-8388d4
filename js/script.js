@@ -172,7 +172,6 @@ function generateInformalLetter(){
     document.getElementById("previewPrepared").innerHTML =
     document.getElementById("prepared").value;
 
-
 }
 
 function generateClientLetter(){
@@ -206,6 +205,7 @@ function generateClientLetter(){
 
     document.getElementById("previewPrepared").innerText =
         prepared || "Advisor Name";
+
 }
 
 
@@ -238,3 +238,4 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
 });
+
