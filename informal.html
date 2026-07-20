@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>General Letter Editor</title>
@@ -14,178 +12,165 @@
 
 </head>
 
-
 <body>
-
 
 <section class="editor">
 
+    <!-- LEFT CONTROL PANEL -->
 
-<!-- LEFT CONTROL PANEL -->
+    <div class="input-area">
 
-<div class="input-area">
+        <button
+        class="back-btn"
+        onclick="backHome()">
 
+        ← Back to Templates
 
-<button 
-class="back-btn"
-onclick="backHome()">
+        </button>
 
-← Back to Templates
+        <h2>Create General Letter</h2>
 
-</button>
+        <label>Prepared By</label>
 
+        <input
+        type="text"
+        id="prepared">
 
-<h2>Create General Letter</h2>
+        <button onclick="generateInformalLetter()">
+            Update Preview
+        </button>
 
-<label>
-Prepared By
-</label>
+        <button onclick="downloadPDF()">
+            Download PDF
+        </button>
 
-<input
-type="text"
-id="prepared">
+    </div>
 
-<button onclick="generateInformalLetter()">
+    <!-- ================= PREVIEW ================= -->
 
-Update Preview
+    <div class="preview">
 
-</button>
+        <div class="paper">
 
+            <!-- ===== TOP NOTICE ===== -->
 
-<button onclick="downloadPDF()">
+            <div class="header-top">
 
-Download PDF
+                <div class="top-line"></div>
 
-</button>
+                <div
+                id="previewNotice"
+                class="header-note"
+                contenteditable="true">
 
+                This document is strictly for internal training purposes and shall not be distributed externally.
 
-</div>
+                </div>
 
+            </div>
 
+            <!-- ===== HEADER ===== -->
 
+            <div class="letter-header">
 
+                <div class="header-left">
 
+                    <img
+                    src="image/logo.png"
+                    class="letter-logo">
 
-<!-- RIGHT PREVIEW -->
+                </div>
 
-<div class="preview">
+                <div class="header-right">
 
+                    <h2
+                    id="previewCompany"
+                    contenteditable="true">
 
-<div class="paper">
+                    NOVA WEALTH MANAGEMENT
 
+                    </h2>
 
+                    <p
+                    id="previewSubtitle"
+                    contenteditable="true">
 
-<!-- COMPANY HEADER -->
+                    INTERNAL TRAINING MATERIAL &nbsp; | &nbsp; CONFIDENTIAL
 
+                    </p>
 
-<div class="letter-header">
+                </div>
 
+            </div>
 
-<img
-src="image/logo.png"
-class="letter-logo">
+            <hr class="main-line">
 
+            <!-- ===== MAIN TITLE ===== -->
 
+            <h1
+            id="previewTitle"
+            contenteditable="true">
 
-<div class="company">
+            CALLER SCRIPT GUIDE
 
+            </h1>
 
-<h3>
-NOVA WEALTH MANAGEMENT
-</h3>
+            <h3
+            id="previewSmallTitle"
+            contenteditable="true">
 
+            Internal Training Material
 
-<p>
+            </h3>
 
-7-7, 7th Floor, The Boulevard,<br>
+            <h4
+            id="previewTag"
+            contenteditable="true">
 
-Mid Valley City,<br>
+            For Internal Use Only
 
-Lingkaran Syed Putra,<br>
+            </h4>
 
-59200 Kuala Lumpur.
+            <!-- ===== CONTENT ===== -->
 
-</p>
+            <div
+            id="previewContent"
+            contenteditable="true">
 
+            Write your announcement or message here...
 
-</div>
+            </div>
 
+            <!-- ===== SIGNATURE ===== -->
 
-</div>
+            <div class="sign">
 
+                Prepared By
 
+                <br><br>
 
-<hr>
+                <span id="previewPrepared">
 
+                Name
 
+                </span>
 
+            </div>
 
+            <div class="letter-footer">
+                <span>Nova Wealth Management (Co. Reg. No. 003602599-M) <span class="footer-divider">|</span> admin@novawealthmy.com</span>
+                <span>Page 1 of 1</span>
+            </div>
 
+        </div>
 
-<!-- INFORMAL CONTENT -->
-
-
-<h2 
-id="previewTitle" 
-contenteditable="true">
-
-Announcement Title
-
-</h2>
-
-
-
-<div 
-id="previewContent" 
-contenteditable="true">
-
-Write your announcement or message here...
-
-</div>
-
-
-
-
-
-
-<div class="sign">
-
-Prepared By:
-
-<br><br>
-
-
-<span 
-id="previewPrepared">
-
-Name
-
-</span>
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-</div>
-
-
+    </div>
 
 </section>
 
-
-
 <script src="js/html2pdf.bundle.min.js"></script>
-
 <script src="js/script.js"></script>
 
-
 </body>
-
 
 </html>

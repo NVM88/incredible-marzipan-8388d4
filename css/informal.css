@@ -2,7 +2,6 @@
     font-family: "Inter";
     src: url("../fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
     font-weight: 100 900;
-    font-style: normal;
 }
 
 @font-face {
@@ -12,377 +11,64 @@
     font-style: italic;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Inter", Arial, sans-serif;
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: "Inter", Arial, sans-serif; }
+body { background: #edf0f4; color: #172a4d; }
+
+.editor { display: grid; grid-template-columns: 350px 1fr; min-height: 100vh; }
+.input-area { padding: 40px 32px; color: #fff; background: #172a4d; }
+.input-area h2 { margin-bottom: 35px; }
+.input-area label { display: block; margin-bottom: 10px; }
+.input-area input { width: 100%; padding: 13px 14px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,.35); border-radius: 7px; background: rgba(255,255,255,.96); }
+.input-area button { width: 100%; padding: 14px; margin-top: 15px; border: 0; border-radius: 7px; background: #fff; color: #7b0d1e; font-weight: 650; cursor: pointer; transition: transform .25s ease, box-shadow .25s ease; }
+.input-area button:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,.25); }
+.input-area button:active { transform: scale(.97); }
+.back-btn { margin-bottom: 70px !important; border: 1px solid rgba(255,255,255,.5) !important; background: transparent !important; color: #fff !important; }
+.back-btn:hover { background: #fff !important; color: #172a4d !important; }
+
+.preview { display: flex; justify-content: center; align-items: flex-start; padding: 50px; overflow: auto; }
+.paper { position: relative; width: 210mm; min-height: 297mm; padding: 18mm 20mm 28mm; overflow: hidden; background: #fff; box-shadow: 0 25px 70px rgba(0,0,0,.12); }
+
+/* Delicate document border, logo, and training notice inspired by the supplied letterhead. */
+.header-top { position: absolute; top: 9mm; right: 14mm; left: 14mm; height: 16mm; border-top: 1px solid #d5d5d5; text-align: center; }
+.header-top::before, .header-top::after, .letter-footer::before, .letter-footer::after { position: absolute; width: 7mm; height: 7mm; border-color: #929292; border-style: solid; content: ""; }
+.header-top::before { top: 7mm; left: -9mm; border-width: 0 0 2px 2px; }
+.header-top::after { top: 7mm; right: -9mm; border-width: 0 2px 2px 0; }
+.top-line { display: none; }
+.header-note { display: inline-block; max-width: 80%; margin-top: 4mm; color: #8a8a8a; font-size: 10pt; font-style: italic; letter-spacing: .02em; outline: none; }
+
+.letter-header { display: flex; align-items: center; justify-content: space-between; gap: 15mm; margin-top: 13mm; }
+.header-left { display: flex; align-items: center; }
+.letter-logo { width: auto; height: 20mm; object-fit: contain; }
+.header-right { margin-left: auto; text-align: right; }
+.header-right h2 { color: #737887; font-size: 13pt; font-weight: 750; line-height: 1.15; outline: none; }
+.header-right p { margin-top: 2mm; color: #9b9b9b; font-size: 9.5pt; font-style: italic; letter-spacing: .06em; white-space: nowrap; outline: none; }
+.main-line { display: block; height: 2px; margin: 12mm 0 14mm; border: 0; background: #bc8791; }
+
+#previewTitle { margin: 0 0 3mm; color: #172a4d; font-size: 24pt; font-weight: 780; line-height: 1.15; text-align: center; outline: none; }
+#previewSmallTitle { color: #929292; font-size: 14pt; font-weight: 400; font-style: italic; text-align: center; outline: none; }
+#previewTag { margin-top: 2mm; color: #7b0d1e; font-size: 12pt; font-weight: 750; text-align: center; outline: none; }
+#previewContent { min-height: 300px; margin-top: 18mm; padding: 0; color: #333; font-size: 11pt; line-height: 1.7; outline: none; }
+.sign { display: block; width: 100%; margin-top: 18mm; color: #444; font-size: 10pt; line-height: 1.6; text-align: right; }
+#previewPrepared { font-weight: 700; outline: none; }
+
+.letter-footer { position: absolute; right: 14mm; bottom: 10mm; left: 14mm; display: flex; align-items: center; justify-content: space-between; padding-top: 11mm; border-top: 1px solid #e3e3e3; color: #b5b5b5; font-size: 8.5pt; line-height: 1.2; }
+.footer-divider { margin: 0 2mm; color: #a6a6a6; }
+.letter-footer::before { bottom: 0; left: -9mm; border-width: 2px 0 0 2px; }
+.letter-footer::after { right: -9mm; bottom: 0; border-width: 2px 2px 0 0; }
+
+#previewTitle, #previewSmallTitle, #previewTag, #previewNotice, #previewCompany, #previewSubtitle, #previewContent, #previewPrepared { cursor: text; }
+#previewTitle:focus, #previewSmallTitle:focus, #previewTag:focus, #previewNotice:focus, #previewCompany:focus, #previewSubtitle:focus, #previewContent:focus, #previewPrepared:focus { background: #fafafa; }
+
+@media (max-width: 1000px) {
+    .editor { grid-template-columns: 1fr; }
+    .preview { padding: 24px; }
+    .paper { transform-origin: top center; }
 }
 
-
-body{
-
-    background:#eef1f5;
-
-}
-
-
-/* layout */
-
-.editor{
-
-    min-height:100vh;
-
-    display:grid;
-
-    grid-template-columns:350px 1fr;
-
-}
-
-
-/* sidebar */
-
-.input-area{
-
-    background:#7B0D1E;
-
-    color:white;
-
-    padding:40px;
-
-}
-
-
-.input-area h2{
-
-    margin-bottom:35px;
-
-}
-
-
-.input-area label{
-
-    display:block;
-
-    margin-bottom:10px;
-
-}
-
-
-.input-area input{
-
-    width:100%;
-
-    padding:14px;
-
-    border:none;
-
-    border-radius:15px;
-
-    margin-bottom:20px;
-
-}
-
-.input-area button{
-
-    width:100%;
-
-    padding:14px;
-
-    margin-top:15px;
-
-    border:none;
-
-    border-radius:30px;
-
-
-    background:white;
-
-    color:#7B0D1E;
-
-
-    cursor:pointer;
-
-
-    font-weight:600;
-
-
-    transition:
-    transform .25s ease,
-    box-shadow .25s ease,
-    background .25s ease;
-
-
-}
-
-
-/* mouse hover */
-
-.input-area button:hover{
-
-
-    transform:translateY(-3px);
-
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.25);
-
-
-}
-
-
-
-/* click effect */
-
-.input-area button:active{
-
-
-    transform:scale(.95);
-
-
-}
-
-/* back button */
-
-.back-btn{
-
-    margin-bottom:70px !important;
-
-    background:transparent !important;
-
-    color:white !important;
-
-    border:1px solid rgba(255,255,255,.5) !important;
-
-}
-
-
-.back-btn:hover{
-
-    background:white !important;
-
-    color:#7B0D1E !important;
-
-}
-
-
-/* preview */
-
-.preview{
-
-    padding:50px;
-
-    display:flex;
-
-    justify-content:center;
-
-}
-
-
-/* paper */
-
-.paper{
-
-    width:794px;
-
-    min-height:1123px;
-
-
-    background:white;
-
-    padding:70px;
-
-
-    box-shadow:
-    0 25px 70px rgba(0,0,0,.12);
-
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-
-/* header */
-
-
-.letter-header{
-
-    text-align:center;
-
-}
-
-
-.letter-logo{
-
-    width:200px;
-
-    margin-bottom:20px;
-
-}
-
-
-.company h3{
-
-    font-size:24px;
-
-    color:#0D1B2A;
-
-}
-
-
-.company p{
-
-    margin-top:15px;
-
-    color:#666;
-
-    line-height:1.5;
-
-}
-
-
-
-hr{
-
-    display:none;
-
-}
-
-
-
-/* title */
-
-#previewTitle{
-
-    text-align:center;
-
-    font-size:32px;
-
-    margin-top:40px;
-
-    margin-bottom:30px;
-
-    outline:none;
-
-}
-
-/* message card */
-
-#previewContent{
-
-    min-height:350px;
-
-    padding:30px;
-}
-
-/* signature */
-
-.sign{
-
-    margin-top:60px;
-
-    width:100%;
-
-    text-align:right;
-
-    display:block;
-
-}
-
-
-#previewPrepared{
-
-    outline:none;
-
-    font-weight:bold;
-
-}
-
-
-
-/* editable */
-
-#previewTitle,
-#previewContent,
-#previewPrepared{
-
-    cursor:text;
-
-}
-
-
-#previewTitle:focus,
-#previewContent:focus,
-#previewPrepared:focus{
-
-    background:#fafafa;
-
-}
-
-/* PRINT ONLY PAPER */
-
-@media print{
-
-
-    body *{
-
-        visibility:hidden;
-
-    }
-
-
-
-    .paper,
-    .paper *{
-
-        visibility:visible;
-
-    }
-
-
-
-    .paper{
-
-        position:absolute;
-
-        left:0;
-
-        top:0;
-
-
-        width:210mm;
-
-        min-height:297mm;
-
-
-        margin:0;
-
-        padding:20mm;
-
-
-        box-shadow:none;
-
-    }
-
-
-
-    .preview{
-
-        padding:0;
-
-    }
-
-
-
-    @page{
-
-        size:A4;
-
-        margin:0;
-
-    }
-
-
+@media print {
+    body * { visibility: hidden; }
+    .paper, .paper * { visibility: visible; }
+    .paper { position: absolute; top: 0; left: 0; width: 210mm; min-height: 297mm; margin: 0; padding: 18mm 20mm 28mm; box-shadow: none; }
+    .preview { padding: 0; }
+    @page { size: A4 portrait; margin: 0; }
 }

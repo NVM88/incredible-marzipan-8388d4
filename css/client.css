@@ -42,16 +42,15 @@ body{
 }
 
 .input-area h2{
-    margin-bottom:25px;
-    color:#0D1B2A;
+    margin-bottom:16px;
 }
 
 .input-area label{
     display:block;
-    margin-top:18px;
+    margin-top:20px;
     margin-bottom:8px;
-    font-weight:600;
-    color:#333;
+    font-size:12px;
+    font-weight:400;
 }
 
 .input-area input{
@@ -137,21 +136,26 @@ body{
 }
 
 .letter-logo{
-    width:400px;
+    height:80px;
+    width:auto;
 }
 
 .company{
-    display:flex;
-    justify-content:center;
-    align-items:flex-end;
+    margin-top:20px;
+	align-items:flex-end;   
     text-align:right;
 }
 
+.company h3{
+    color:#0D1B2A;
+	font-size:12px;
+}
+
 .company p{
-    font-size:10px;
+    color:#555;
     line-height:1.6;
-    color:#666;
-    text-align:right;
+	
+	font-size:9px;
 }
 
 hr{
@@ -168,7 +172,7 @@ hr{
     text-align:right;
     margin-right:8px;
     margin-bottom:28px;
-    font-size:13px;
+    font-size:14px;
     color:#666;
 }
 
@@ -197,12 +201,13 @@ hr{
 .sign{
     margin-top:70px;
     line-height:1.8;
-    font-size:13px;
+    font-size:12px;
+    font-weight:600;
     color:#444;
 }
 
 #previewPrepared{
-    font-size:14px;
+    font-size:12px;
     font-weight:600;
     color:#0D1B2A;
 }
